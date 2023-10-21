@@ -16,7 +16,7 @@ def GetDataFrame(filename: str):
 
 
 def get_data_frame(filename: str):
-    df: pd.DataFrame = pd.read_csv(filename, header=0).fillna(0)
+    df: pd.DataFrame = pd.read_csv(filename, header=0).fillna(-1)
     df.loc[df.type == 'white', 'type'] = np.float64(0) #разделение данных по цвету
     df.loc[df.type == 'red', 'type'] = np.float64(1)
     # print(df)
